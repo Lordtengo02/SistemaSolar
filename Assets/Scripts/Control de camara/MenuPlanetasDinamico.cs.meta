@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4b09b67c7d9ce8140b4bc25d3e930af2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - botonPrefab: {instanceID: 0}
+  - contenedor: {instanceID: 0}
+  - camaraController: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
