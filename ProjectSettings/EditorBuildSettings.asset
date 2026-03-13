@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marte_Interior.unity
     guid: 3ee23b8d0011bf94181ffca2318eb337
+  - enabled: 1
+    path: Assets/Scenes/Luna_Interior.unity
+    guid: 81c3b4657891cb14dbbc0b365321f54d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

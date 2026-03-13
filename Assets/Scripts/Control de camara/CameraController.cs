@@ -2,34 +2,47 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float velocidad = 5f;   // Velocidad de movimiento de la cámara
-    [SerializeField] private Vector3 offsetBase = new Vector3(0, 2, -5); // Offset base para planetas pequeños
+    [SerializeField] private float suavizado = 0.5f;       // Tiempo de suavizado del movimiento
+    [SerializeField] private float margenExtra = 10f;      // Margen adicional para no entrar al planeta
+    [SerializeField] private float distanciaMinima = 5f;   // Distancia mínima de seguridad
+    [SerializeField] private float zoomBase = 60f;         // Campo de visión base (FOV)
+    [SerializeField] private float zoomFactor = 2f;        // Factor de ajuste del zoom según tamaño
 
-    private Transform objetivo; // El planeta seleccionado
-    private Vector3 offsetActual; // Offset calculado dinámicamente
+    private Transform objetivo;
+    private Vector3 offsetActual;
+    private Vector3 velocidadSuavizada = Vector3.zero;
+    private Camera camara;
+
+    void Awake()
+    {
+        camara = GetComponent<Camera>();
+    }
 
     void Update()
     {
         if (objetivo != null)
         {
-            // Movimiento suave hacia el planeta con offset dinámico
             Vector3 posicionDeseada = objetivo.position + offsetActual;
-            transform.position = Vector3.Lerp(transform.position, posicionDeseada, Time.deltaTime * velocidad);
-
-            // La cámara siempre mira al planeta
+            transform.position = Vector3.SmoothDamp(transform.position, posicionDeseada, ref velocidadSuavizada, suavizado);
             transform.LookAt(objetivo);
         }
     }
 
-    // Método público para que el menú llame
     public void EnfocarPlaneta(Transform planeta)
     {
         objetivo = planeta;
 
-        // Ajustar offset dinámicamente según el tamaño del planeta
-        float tamaño = planeta.localScale.x; // asumimos que el planeta es uniforme en X, Y, Z
+        // Radio del planeta (su escala en X / 2)
+        float radio = planeta.localScale.x * 0.5f;
 
-        // Calculamos un offset proporcional al tamaño
-        offsetActual = new Vector3(0, tamaño * 0.5f, -Mathf.Max(offsetBase.z * tamaño, -5f));
+        // Distancia segura: radio + margen extra, nunca menor que la mínima
+        float distancia = Mathf.Max(radio + margenExtra, distanciaMinima);
+
+        // Offset dinámico: detrás y un poco arriba
+        offsetActual = new Vector3(0, radio * 0.5f, -distancia);
+
+        // Ajustar zoom dinámico según tamaño del planeta
+        float nuevoFOV = Mathf.Clamp(zoomBase - (radio / zoomFactor), 20f, zoomBase);
+        camara.fieldOfView = nuevoFOV;
     }
 }

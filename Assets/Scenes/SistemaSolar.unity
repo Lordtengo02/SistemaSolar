@@ -256,7 +256,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1014736895960144, guid: c91342f6e3afc48fd958056404ead345, type: 3}
       propertyPath: m_Name
-      value: Uranus
+      value: Urano
       objectReference: {fileID: 0}
     - target: {fileID: 4799057029891002, guid: c91342f6e3afc48fd958056404ead345, type: 3}
       propertyPath: m_LocalScale.x
@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 255.7
+      value: -255.7
       objectReference: {fileID: 0}
     - target: {fileID: 4677324220665258, guid: b4201d402613a4464b35c805dafcca62, type: 3}
       propertyPath: m_LocalRotation.w
@@ -816,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4387678931267766, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 132
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 4387678931267766, guid: 1818e1a170ef94c3aacee2ba50057521, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6668,8 +6668,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b77ffde3c7589469362d54223c1265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  velocidad: 5
-  offsetBase: {x: 0, y: 2, z: -5}
+  suavizado: 0.5
+  margenExtra: 20
+  distanciaMinima: 5
+  zoomBase: 60
+  zoomFactor: 2
 --- !u!1 &1774907365 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1408581670749804, guid: f9a741bb8762344c6a2a9cb4217ef728, type: 3}
@@ -6700,7 +6703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dab2f0814e42d47a90cd7355e2c311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VisitarPlaneta
-  nombreEscena: 
+  nombreEscena: Luna_Interior
 --- !u!1 &1803317907
 GameObject:
   m_ObjectHideFlags: 0
@@ -6937,7 +6940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620931210112870, guid: ab152f61198d54532ae39108e616ff59, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.8
+      value: -56.8
       objectReference: {fileID: 0}
     - target: {fileID: 4620931210112870, guid: ab152f61198d54532ae39108e616ff59, type: 3}
       propertyPath: m_LocalRotation.w
