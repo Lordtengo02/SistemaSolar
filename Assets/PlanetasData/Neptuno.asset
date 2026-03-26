@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14dac7951ea89f47817cdac08d505ea, type: 3}
+  m_Name: Neptuno
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetaData
+  nombre: Neptuno
+  "tama\xF1o": "49.528 kil\xF3metros, casi 4 veces la Tierra"
+  distanciaAlSol: "4.500 millones de kil\xF3metros"
+  composicion: Gaseoso
+  icono: {fileID: -1184764672, guid: 4f7b271f7454b234991f4bd6d064cac1, type: 3}
+  descripcionAmigable: "Neptuno es el planeta m\xE1s lejano del sistema solar."
+  curiosidadExtra: Neptuno nunca es visible a simple vista, ya que es facilmente
+    ecilpsado por otros planetas enanos.
+  gravedad: 11

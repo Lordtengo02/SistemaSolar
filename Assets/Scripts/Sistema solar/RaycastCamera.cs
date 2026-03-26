@@ -6,14 +6,13 @@ public class SeleccionPlaneta : MonoBehaviour
 {
     void Update()
     {
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) // Nuevo Input System
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                // Busca el componente VisitarPlaneta en el objeto clicado
                 VisitarPlaneta visitar = hit.collider.GetComponent<VisitarPlaneta>();
                 if (visitar != null && !string.IsNullOrEmpty(visitar.nombreEscena))
                 {

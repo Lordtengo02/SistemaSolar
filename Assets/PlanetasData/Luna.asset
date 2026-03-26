@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14dac7951ea89f47817cdac08d505ea, type: 3}
+  m_Name: Luna
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetaData
+  nombre: Luna
+  "tama\xF1o": "1.738 kil\xF3metros"
+  distanciaAlSol: "149.6 millones de km, dependiendo su posici\xF3n."
+  composicion: Rocoso
+  icono: {fileID: 1739522384, guid: 797a42f92b283d04d99c534a2cc88b10, type: 3}
+  descripcionAmigable: Nuestro satelite natural, gracias a el tenemos noches iluminadas.
+  curiosidadExtra: 
+  gravedad: 1.6

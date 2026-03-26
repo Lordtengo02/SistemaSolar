@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14dac7951ea89f47817cdac08d505ea, type: 3}
+  m_Name: Venus
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetaData
+  nombre: Venus
+  "tama\xF1o": "12.104 kil\xF3metros"
+  distanciaAlSol: "108,2 millones de kil\xF3metros, menos que la distancia del sol
+    a la Tierra"
+  composicion: Rocoso
+  icono: {fileID: 438358417, guid: 4f7b271f7454b234991f4bd6d064cac1, type: 3}
+  descripcionAmigable: "Casi del tama\xF1o de la Tierra, solo que es el m\xE1s caliente
+    del sistema solar"
+  curiosidadExtra: "Tiene nubes de \xE1cido sulfurico, por lo que se genera una lluvia
+    \xE1cida."
+  gravedad: 8.9

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Necesario para TextMeshPro
+using TMPro;
 
 public class MenuPlanetasDinamico : MonoBehaviour
 {
@@ -8,6 +8,10 @@ public class MenuPlanetasDinamico : MonoBehaviour
     [SerializeField] private Transform contenedor;
     [SerializeField] private CameraController camaraController;
     [SerializeField] private Transform[] planetas;
+    [SerializeField] private PlanetaData[] datosPlanetas;
+    [SerializeField] private PanelInfoPlaneta panelInfo;
+    [SerializeField] private PlanetSelectionManager planetSelectionManager;
+
 
     void Start()
     {
@@ -17,21 +21,28 @@ public class MenuPlanetasDinamico : MonoBehaviour
             return;
         }
 
-        foreach (Transform planeta in planetas)
+        for (int i = 0; i < planetas.Length; i++)
         {
+            Transform planetaTransform = planetas[i];
+            Planeta planetaScript = planetaTransform.GetComponent<Planeta>();
+            PlanetaData datos = planetaScript.datos;
+
             GameObject nuevoBoton = Instantiate(botonPrefab, contenedor);
 
-            // Usar TMP_Text en lugar de Text
             TMP_Text textoBoton = nuevoBoton.GetComponentInChildren<TMP_Text>();
             if (textoBoton != null)
-                textoBoton.text = planeta.name;
-            else
-                Debug.LogError("El prefab del botón no tiene TMP_Text");
+                textoBoton.text = datos.nombre;
 
             nuevoBoton.GetComponent<Button>().onClick.AddListener(() =>
             {
-                camaraController.EnfocarPlaneta(planeta);
+                camaraController.EnfocarPlaneta(planetaScript.transform);
+                panelInfo.MostrarInfo(planetaScript.datos);
             });
+
+
+
+
         }
+
     }
 }

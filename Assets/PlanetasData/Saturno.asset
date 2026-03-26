@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14dac7951ea89f47817cdac08d505ea, type: 3}
+  m_Name: Saturno
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetaData
+  nombre: Saturno
+  "tama\xF1o": "120.536 kil\xF3metros"
+  distanciaAlSol: "1,433 millones de kil\xF3metros, que equivale a 9.5 veces entre
+    el sol y la Tierra"
+  composicion: Gaseoso
+  icono: {fileID: -494661148, guid: 4f7b271f7454b234991f4bd6d064cac1, type: 3}
+  descripcionAmigable: Famoso por sus anillos brillantes. Casi tan grande como Jupiter.
+  curiosidadExtra: "No siempre tuvo anillos, se cree que se formaron cuando los dinosaurios
+    a\xFAn poblaban la Tierra."
+  gravedad: 10.4

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14dac7951ea89f47817cdac08d505ea, type: 3}
+  m_Name: Urano
+  m_EditorClassIdentifier: Assembly-CSharp::PlanetaData
+  nombre: Urano
+  "tama\xF1o": "51.118 kil\xF3metros"
+  distanciaAlSol: "2.870 millones de kil\xF3metros, 19 veces a comparaci\xF3n del
+    sol"
+  composicion: Gaseoso
+  icono: {fileID: -1331820728, guid: 4f7b271f7454b234991f4bd6d064cac1, type: 3}
+  descripcionAmigable: Planeta azul que gira de lado, como si rodara en el espacio.
+  curiosidadExtra: "Aunque no es el m\xE1s lejano al sol, es el planeta m\xE1s fr\xEDo
+    del sistema solar, llegando a -224 \xB0C"
+  gravedad: 8.7

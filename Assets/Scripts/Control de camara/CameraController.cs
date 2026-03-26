@@ -30,6 +30,9 @@ public class CameraController : MonoBehaviour
 
     public void EnfocarPlaneta(Transform planeta)
     {
+        Debug.Log("Enfocando planeta: " + planeta.name);
+        // tu lógica de zoom aquí
+
         objetivo = planeta;
 
         // Radio del planeta (su escala en X / 2)
