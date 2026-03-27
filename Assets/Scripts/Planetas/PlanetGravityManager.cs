@@ -1,24 +1,59 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlanetGravityManager : MonoBehaviour
 {
-    [SerializeField] private float gravedad = -3.7f; // Gravedad de Marte (negativa para dirección hacia abajo)
-    private PlayerController playerController;       // Player local dentro del planeta
+    [Header("Nombre del planeta/luna (ej. Tierra, Marte, Luna)")]
+    [SerializeField] private string planeta;
 
-    private void Start()
+    [Header("Fuerza base de salto en Tierra")]
+    [SerializeField] private float fuerzaBaseSalto = 6f;
+
+    private PlayerControllerRB playerController;
+
+    // Tabla de gravedades en m/s²
+    private Dictionary<string, float> gravedades = new Dictionary<string, float>()
     {
-        // Busca automáticamente el Player hijo del planeta
-        playerController = GetComponentInChildren<PlayerController>();
+        {"Tierra", -9.8f},
+        {"Mercurio", -3.7f},
+        {"Venus", -8.87f},
+        {"Marte", -3.71f},
+        {"Luna", -1.62f},
+        {"Júpiter", -23.12f},
+        {"Saturno", -8.96f},
+        {"Urano", -8.69f},
+        {"Neptuno", -11.0f},
+        {"Plutón", -0.81f}
+    };
 
-        if (playerController == null)
+    private void OnEnable()
+    {
+        if (gravedades.ContainsKey(planeta))
         {
-            Debug.LogWarning($"No se encontró Player dentro de {gameObject.name}");
+            float gravedad = gravedades[planeta];
+
+            // Ajusta la gravedad global
+            Physics.gravity = new Vector3(0, gravedad, 0);
+
+            // Ajusta el salto del Player
+            playerController = FindObjectOfType<PlayerControllerRB>();
+            if (playerController != null)
+            {
+                float gravedadTierra = 9.8f;
+                float jumpForceEscalado = fuerzaBaseSalto * (gravedadTierra / Mathf.Abs(gravedad));
+
+                // Limitar el salto para que no sea exagerado
+                jumpForceEscalado = Mathf.Min(jumpForceEscalado, 12f);
+
+                playerController.SetJumpForce(jumpForceEscalado);
+
+            }
+
+            Debug.Log($"Gravedad de {planeta}: {gravedad} m/s²");
         }
         else
         {
-            // Ajusta la gravedad del Player al valor del planeta
-            playerController.SetGravedad(gravedad);
-            Debug.Log($"Gravedad de {gameObject.name} configurada en {gravedad} m/s²");
+            Debug.LogWarning($"No se encontró gravedad para {planeta}. Usa valores manuales.");
         }
     }
 }
